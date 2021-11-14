@@ -12,6 +12,7 @@ def lambda_handler(event, context):
     if status == 200:
         return {
             "statusCode": status,
+            "headers": {'Access-Control-Allow-Origin': '*'},
             "body": json.dumps({
                 "message": items,
             }),
@@ -20,4 +21,5 @@ def lambda_handler(event, context):
         print(response)
         return {
             "statusCode": status,
+            "headers": {'Access-Control-Allow-Origin': '*'},
         }
